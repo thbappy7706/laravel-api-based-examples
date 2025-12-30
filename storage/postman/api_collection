@@ -40,7 +40,7 @@
                                 },
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "[]",
+                                    "raw": "{\n    \"name\": \"sample_text\",\n    \"email\": \"user8@example.com\",\n    \"password\": \"sample_text\"\n}",
                                     "options": []
                                 }
                             }
@@ -79,7 +79,7 @@
                                 },
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "[]",
+                                    "raw": "{\n    \"email\": \"user7@example.com\",\n    \"password\": \"sample_text\"\n}",
                                     "options": []
                                 }
                             }
@@ -149,6 +149,162 @@
                                         "v1",
                                         "me"
                                     ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "tasks",
+                    "item": [
+                        {
+                            "name": "[GET] api/v1/tasks",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/tasks",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "v1",
+                                        "tasks"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "[POST] api/v1/tasks",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/tasks",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "v1",
+                                        "tasks"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "[GET] api/v1/tasks/{task}",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/tasks/:task",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "v1",
+                                        "tasks",
+                                        ":task"
+                                    ],
+                                    "variable": []
+                                }
+                            }
+                        },
+                        {
+                            "name": "[PUT] api/v1/tasks/{task}",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/tasks/:task",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "v1",
+                                        "tasks",
+                                        ":task"
+                                    ],
+                                    "variable": []
+                                }
+                            }
+                        },
+                        {
+                            "name": "[DELETE] api/v1/tasks/{task}",
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Accept",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/tasks/:task",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "v1",
+                                        "tasks",
+                                        ":task"
+                                    ],
+                                    "variable": []
                                 }
                             }
                         }
