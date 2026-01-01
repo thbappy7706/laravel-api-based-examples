@@ -12,15 +12,28 @@ class PostController extends ApiController
 {
     public function index(Request $request)
     {
-        $perPage = (int) $request->get('per_page', 15);
+        $perPage = (int)$request->get('per_page', 15);
         $perPage = $perPage > 0 ? min($perPage, 100) : 15;
 
-        $posts = Post::with(['category', 'author'])
-            ->latest('id')
-            ->paginate($perPage);
+        $posts = Post::with(['category', 'author']);
+        if ($request->has('category')) {
+            $posts->whereHas('category', function ($q) use ($request) {
+                $q->where('slug', $request->category);
+            });
+        }
 
-        return $this->success(PostResource::collection($posts), 'Posts retrieved successfully');
+        if ($request->has('author')) {
+            $posts->where('user_id', $request->author);
+        }
+
+        if ($request->boolean('published')) {
+            $posts->whereNotNull('published_at');
+        }
+
+
+        return $this->success(PostResource::collection($posts->latest()->paginate($perPage)), 'Posts retrieved successfully');
     }
+
 
     public function store(PostRequest $request)
     {
