@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\BookmarkController;
 use App\Http\Controllers\Api\V1\TaskController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\PostController;
@@ -21,6 +22,7 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('tasks', TaskController::class);
         Route::apiResource('categories', CategoryController::class);
         Route::apiResource('posts', PostController::class);
+        Route::apiResource('bookmarks', BookmarkController::class);
     });
 
 
