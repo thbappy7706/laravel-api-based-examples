@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\BookmarkController;
+use App\Http\Controllers\Api\V1\RecipeController;
 use App\Http\Controllers\Api\V1\TaskController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\PostController;
@@ -23,6 +24,11 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('categories', CategoryController::class);
         Route::apiResource('posts', PostController::class);
         Route::apiResource('bookmarks', BookmarkController::class);
+
+//        Recipe API with Search - Query Complexity & Full-Text Search with Scout
+
+        Route::get('/search-recipes', RecipeController::class);
+
     });
 
 
