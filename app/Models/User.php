@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use HasinHayder\Tyro\Concerns\HasTyroRoles;
+use HasinHayder\TyroLogin\Traits\HasTwoFactorAuth;
+
+
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable,HasApiTokens;
+    use HasFactory, Notifiable,HasApiTokens, HasTyroRoles;
 
     /**
      * The attributes that are mass assignable.
